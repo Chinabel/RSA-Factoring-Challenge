@@ -4,6 +4,7 @@ import sys
 from resource import getrusage as resource_usage, RUSAGE_SELF
 from time import time as timestamp
 
+
 def unix_time(function):
     '''Return `real`, `sys` and `user` elapsed time, like UNIX's command `time`
     You can calculate the amount of used CPU-time used by your
@@ -21,6 +22,7 @@ def unix_time(function):
             end_time - start_time,
             end_resources.ru_utime - start_resources.ru_utime,
             end_resources.ru_stime - start_resources.ru_stime)
+
 
 def trial_division(n: int) -> int:
     """
@@ -41,6 +43,7 @@ def trial_division(n: int) -> int:
             f += 2
     # n is prime
     return 1
+
 
 def print_factors():
 
