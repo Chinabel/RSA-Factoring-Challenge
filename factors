@@ -1,27 +1,25 @@
 #!/usr/bin/python3
-'''Module - Factors natural numbers'''
+""" My module for testing numbers and finding the factorization """
+import math
+from sys import argv
 
-from  __future__  import  division
-import sys
-import os
 
-def func_factors(filename):
-    '''Read and find Factorials of every line '''
-    with open(filename, 'r') as f:
-        for line in f:
-            num = int(line)
-            resul = factors(num)
-            print ("{}={}*{}".format(num, int(num / resul), resul))
-    f.closed
+def factor(number, test_num):
+    """ Finds the values to return once a number has been found
+    """
 
-def factors(x):
-    '''Returns the minimun factorial number '''
-    for y in range(1, x + 1):
-        if x % y == 0 and y is not 1:
-            return y
 
-if __name__ == "__main__":
-    '''main'''
-    if (len(sys.argv) is not 2):
-        raise SyntaxError("[BAD-USAGE]: Expected only one argument")
-    func_factors(sys.argv[1])
+    print("{}={}*{}".format(number, (number // test_num), test_num))
+
+
+with open(argv[1], mode="r", encoding="UTF-8") as f:
+    for line in f:
+        number = int(line)
+        if number % 2 == 0:
+            factor(number, 2)
+        else:
+            max_number_to_test = math.floor(math.sqrt(number))
+            for test_num in range(3, max_number_to_test + 1, 2):
+                if number % test_num == 0:
+                    factor(number, test_num)
+                    break
