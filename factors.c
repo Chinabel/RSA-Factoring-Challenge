@@ -1,6 +1,11 @@
 #include <stdio.h>
 
-int main()
+/**
+ * main - description for int
+ * Return: 0 if success
+ */
+
+int main(void)
 {
 	long long int num = 239809320265259;
 	long int factor1 = 2;
@@ -12,7 +17,8 @@ int main()
 		{
 			factor1++;
 		}
-		else {
+		else
+		{
 			return (-1);
 		}
 	}

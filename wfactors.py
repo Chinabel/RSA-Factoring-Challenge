@@ -12,6 +12,7 @@ def factorize(num):
     factor2 = num // factor1
     return (factor2, factor1)
 
+
 if len(sys.argv) != 2:
     sys.exit(f"Wrong usage: {sys.argv[0]} <file_path>")
 
